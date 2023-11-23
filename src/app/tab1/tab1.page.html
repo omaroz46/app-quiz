@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" (click)="resetQuiz()"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="large">The Quizzler</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="quiz-content">
+
+  <ng-container *ngIf="!allQuestionsAnswered; else resultTemplate">
+    <ng-container *ngIf="currentQuestionIndex === 0">
+      <div class="app-question-container">
+        <app-question
+          [question]="'What is the capital of France?'"
+          [options]="['Berlin', 'Paris', 'Madrid', 'Rome']"
+          (answerSelected)="handleAnswer($event)"
+          [ngClass]="{'success-answer': answerClass === 'success-answer', 'danger-answer': answerClass === 'danger-answer'}"
+        ></app-question>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="currentQuestionIndex === 1">
+      <div class="app-question-container">
+        <app-question
+          [question]="'How many continents are there on Earth?'"
+          [options]="['5', '6', '7', '8']"
+          (answerSelected)="handleAnswer($event)"
+          [ngClass]="{'success-answer': answerClass === 'success-answer', 'danger-answer': answerClass === 'danger-answer'}"
+        ></app-question>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="currentQuestionIndex === 2">
+      <div class="app-question-container">
+        <app-question
+          [question]="'From which country is the FC Barcelona founder Joan Gamper?'"
+          [options]="['Spain', 'Switzerland', 'Netherlands', 'Germany']"
+          (answerSelected)="handleAnswer($event)"
+          [ngClass]="{'success-answer': answerClass === 'success-answer', 'danger-answer': answerClass === 'danger-answer'}"
+        ></app-question>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="currentQuestionIndex === 3">
+      <div class="app-question-container">
+        <app-question
+          [question]="'When did slavery end in the United States?'"
+          [options]="['1865', '1945', '1792', '1826']"
+          (answerSelected)="handleAnswer($event)"
+          [ngClass]="{'success-answer': answerClass === 'success-answer', 'danger-answer': answerClass === 'danger-answer'}"
+        ></app-question>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="currentQuestionIndex === 4">
+      <div class="app-question-container">
+        <app-question
+          [question]="'Which country has the most people in the world?'"
+          [options]="['India', 'Russia', 'China', 'Germany']"
+          (answerSelected)="handleAnswer($event)"
+          [ngClass]="{'success-answer': answerClass === 'success-answer', 'danger-answer': answerClass === 'danger-answer'}"
+        ></app-question>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="currentQuestionIndex === 5">
+      <div class="app-question-container">
+        <app-question
+          [question]="'What color is a carrot?'"
+          [options]="['Black', 'Grey', 'Red', 'Orange']"
+          (answerSelected)="handleAnswer($event)"
+          [ngClass]="{'success-answer': answerClass === 'success-answer', 'danger-answer': answerClass === 'danger-answer'}"
+        ></app-question>
+      </div>
+    </ng-container>
+
+  </ng-container>
+
+  <ng-template #resultTemplate>
+    <div class="result-container" *ngIf="calculateCorrectAnswers() === 6">
+      <h2 class="success-message">You are a winner!</h2>
+      <p>{{ calculateCorrectAnswers() }} out of 6 questions are answered correctly.</p>
+      <p>You can take a picture now.</p>
+      <ion-button class="result-button" (click)="navigateToTab2()">Go to Tab 2</ion-button>
+    </div>
+    <div class="result-container" *ngIf="calculateCorrectAnswers() !== 6">
+      <h2>Quiz Evaluation</h2>
+      <p>{{ calculateCorrectAnswers() }} out of 6 questions are answered correctly.</p>
+      <ion-button (click)="resetQuiz()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </div>
+  </ng-template>
+</ion-content>

@@ -1,0 +1,8 @@
+<div class="question-container">
+  <p>{{ question }}</p>
+  <ion-list>
+    <ion-item *ngFor="let option of options" (click)="selectAnswer(option)">
+      {{ option }}
+    </ion-item>
+  </ion-list>
+</div>

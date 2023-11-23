@@ -1,0 +1,21 @@
+/* question.component.scss */
+
+.question-container {
+  padding: 16px;
+
+  ion-list {
+    margin-top: 16px;
+    
+    &.correct-list {
+      --ion-background-color: #4caf50; /* Green for correct answer */
+    }
+
+    &.wrong-list {
+      --ion-background-color: #f44336; /* Red for wrong answer */
+    }
+
+    ion-item {
+      cursor: pointer;
+    }
+  }
+}

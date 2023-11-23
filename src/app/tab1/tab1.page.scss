@@ -1,0 +1,70 @@
+/* tab1.page.scss */
+
+ion-content {
+  --ion-background-color: #f4f4f4; /* Set your desired background color */
+}
+
+ion-title {
+  font-size: 1.5em; /* Adjust the font size as needed */
+}
+
+/* Styling for the question container */
+.app-question-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+/* Styling for the options */
+.app-question-option {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f8f8f8; /* Set your desired hover color */
+  }
+}
+
+/* Styling for the result container */
+.result-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+/* Styling for the success message */
+.success-answer {
+  color: green; /* Set your desired Success color */
+  font-weight: bold;
+}
+
+/* Styling for the danger message */
+.danger-answer {
+  color: red; /* Set your desired Danger color */
+  font-weight: bold;
+}
+
+/* Styling for the button */
+.result-button {
+  margin-top: 10px;
+  background-color: #007bff; /* Set your desired button color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3; /* Set your desired hover button color */
+  }
+}
+

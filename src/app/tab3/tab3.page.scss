@@ -1,0 +1,19 @@
+/* share.page.scss */
+
+ion-content {
+    --ion-background-color: #f4f4f4; /* Set your desired background color */
+  }
+  
+  ion-title {
+    font-size: 1.5em; /* Adjust the font size as needed */
+  }
+  
+  app-share {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  

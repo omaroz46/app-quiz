@@ -3,7 +3,6 @@ import { LoadingController } from "@ionic/angular";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { environment } from "src/environments/environment";
 import { User } from "../data/user";
-
 export const USER_TABLE = 'user'
 
 @Injectable({

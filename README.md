@@ -30,7 +30,7 @@ Copy code
 ionic serve
 
 4. Installiere Capacitor-Plugins
-5. 
+   
 Führe die folgenden Befehle aus, um die erforderlichen Capacitor-Plugins zu installieren:
 
 bash
